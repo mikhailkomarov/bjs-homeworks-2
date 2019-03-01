@@ -74,7 +74,7 @@ function getAverageMark(marks){
 
   // Проверяем, если количество оценок больше 5, то выводим эту информацию в консоль и обрезаем массив
   if (marks.length > scoreCounter) {
-    console.log(`Всего оценок: ${marks}`);
+    console.log(`Всего оценок: ${marks.length}`);
     arrayMarks = marks.slice(0,scoreCounter);
   };
   
