@@ -27,13 +27,12 @@ function getResult(a,b,c){
     return x = twoRoots;
   } else if (d == 0) {
     x1 = -b / (2 * a);
-    console.log(`Один корень уравнения: ${x1}`);
+    console.log(`Один корень уравнения: x = ${x1}`);
     return x = x1;
   } else if (d < 0) {
     console.log('Корней нет, т.к. d < 0');
     return null;
   };
-    return x;
 };
 
 //Задание №2
@@ -46,14 +45,15 @@ function calculateDrinkTask(){
 };
 
 function askDrink(name,dateOfBirthday){
-  dateOfBirthday.getFullYear(); // С помощью метода getFullYear() получаем год из текущей даты
   let currentDate = new Date(); // Инициализация объекта с текущей датой
   let age = currentDate.getFullYear() - dateOfBirthday.getFullYear(); // Переменная хранящая (возраст), результат вычислений даты рождения и текущей даты
-  console.log(age); // Вывод возраста пользователя в консоль
+  console.log(`Ваш возраст: ${age}`); // Вывод возраста пользователя в консоль
   let result; 
   if (age > 18) {
+    console.log(`Не желаете ли олд-фэшн ${name}`);
     result = `Не желаете ли олд-фэшн ${name}`;
   } else {
+    console.log(`Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`);
     result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
   };
   return result; // Возврат результата из функции
@@ -69,18 +69,13 @@ function calculateAverageRating(){
 
 function getAverageMark(marks){
   let sum = 0; // Переменная хранящая сумму всех оценок
-  let count = 0; // Переменная хранящая кол-во оценок
   let arrayMarks = []; // Инициализация пустого массива
-
-  // С помощью цикла считаем общее колличество введёных в поле оценок
-  for (let i = 0; i < marks.length; i++) {
-    count += 1;
-  };
+  let scoreCounter = 5;
 
   // Проверяем, если количество оценок больше 5, то выводим эту информацию в консоль и обрезаем массив
-  if (count > 5) {
-    console.log(`Всего оценок: ${count}`);
-    arrayMarks = marks.slice(0,5);
+  if (marks.length > scoreCounter) {
+    console.log(`Всего оценок: ${marks}`);
+    arrayMarks = marks.slice(0,scoreCounter);
   };
   
   // С помощью цикла проходим по массиву и складываем все оценки в общую сумму
