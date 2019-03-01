@@ -24,14 +24,13 @@ function getResult(a,b,c){
     x2 = (-b - Math.sqrt(d)) / (2 * a);
     twoRoots.push(x1, x2);
     console.log(twoRoots);
-    console.log(`Корни уравнения: ${twoRoots}`);
     return x = twoRoots;
   } else if (d == 0) {
     x1 = -b / (2 * a);
     console.log(`Один корень уравнения: ${x1}`);
     return x = x1;
   } else if (d < 0) {
-    console.log('Корней нет, т.к. d < 0')
+    console.log('Корней нет, т.к. d < 0');
     return null;
   };
     return x;
