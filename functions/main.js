@@ -5,8 +5,8 @@
 //Функция №1 
 
 function getSolution(a,b,c) {
-	let d = b * b - 4 * a * c;
-	let x1, x2;
+	let d = b * b - 4 * a * c; // Переменная хранящая значение формулы дискриминанта
+	let x1, x2; // Инициализация переменных хранящих значение формул для вычисления корней уравнения
   if (d < 0) {
     return {
       D: d
@@ -129,7 +129,7 @@ function getAverageValue(data) {
   let objMarks = {}; // Инициализация пустого объекта
   let arrayMarks = []; // Инициализация пустого массива
   for (let key in data) {
-    objMarks[key] = getAverageScore(data[key]);
+    objMarks[key] = getAverageScore(data[key]); 
     arrayMarks.push(objMarks[key]);
   }
   let average = getAverageScore(arrayMarks);
