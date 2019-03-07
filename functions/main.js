@@ -46,10 +46,7 @@ function getPersonName(secretData) {
 }
 
 function getPersonData(secretData) {
-  let objDataName = {};
-  // objDataName.firstName = getPersonName(secretData.aaa);
-  // objDataName.lastName = getPersonName(secretData.bbb);
-  return objDataName = {
+  return {
     firstName: getPersonName(secretData.aaa),
     lastName: getPersonName(secretData.bbb)
   };
