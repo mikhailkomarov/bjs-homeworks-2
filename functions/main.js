@@ -8,22 +8,14 @@ function getSolution(a,b,c) {
 	let d = b * b - 4 * a * c; // Переменная хранящая значение формулы дискриминанта
 	let x1, x2; // Инициализация переменных хранящих значение формул для вычисления корней уравнения
   if (d < 0) {
-    return {
-      D: d
-    }
+    return {D: d}
   } else if (d == 0) {
     x1 = -b / (2 * a);
-    return {
-      roots: [x1],
-      D: d
-    }
+    return {roots: [x1], D: d}
   } else if (d > 0) {
     x1 = (-b + Math.sqrt(d)) / (2 * a);
     x2 = (-b - Math.sqrt(d)) / (2 * a);
-    return  {
-      roots: [x1, x2],
-      D: d
-    }
+    return  {roots: [x1, x2], D: d}
   }
 }
 
@@ -49,31 +41,18 @@ showSolutionsMessage(2,4,2);
 
 // Задание №2 (Расшифровка данных)
 
+function getPersonName(secretData) {
+  return secretData ? 'Родриго' : 'Эмильо'  
+}
+
 function getPersonData(secretData) {
-  if (secretData.aaa === 0 && secretData.bbb === 0) {
-    return {
-      firstName: 'Родриго',
-      lastName: 'Родриго'
-    }
-  } 
-  if (secretData.aaa === 1 && secretData.bbb === 1) {
-    return {
-      firstName: 'Эмильо',
-      lastName: 'Эмильо'
-    }
-  }
-  if (secretData.aaa === 1 && secretData.bbb === 0) {
-    return {
-      firstName: 'Эмильо',
-      lastName: 'Родриго'
-    }
-  }
-  if (secretData.aaa === 0 && secretData.bbb === 1) {
-    return {
-      firstName: 'Родриго',
-      lastName: 'Эмильо'
-    }
-  }
+  let objDataName = {};
+  // objDataName.firstName = getPersonName(secretData.aaa);
+  // objDataName.lastName = getPersonName(secretData.bbb);
+  return objDataName = {
+    firstName: getPersonName(secretData.aaa),
+    lastName: getPersonName(secretData.bbb)
+  };
 }
 
 console.log(getPersonData({
